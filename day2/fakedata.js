@@ -100,7 +100,7 @@ document.body.appendChild(container)
 // // ];
 // // Question:
 // // Create a webpage displaying product cards with details like name, price, and stock. Use CSS to 
-// // create a responsive layout with cards stacking vertically on small screens.
+// // create a responsive layout with cards stacking vertically on small  screens.
 
 
 let pduts = [
