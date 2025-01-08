@@ -5,40 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        }
-      .imgsrc{
-
-        width:300px;
-        height: 300px;
-            
-      }
-      .parent{
-        border: 2px solid black;
-        display: grid;
-        gap: 10px;
-        padding: 10px;
-   grid-template-columns: repeat(4,1fr);
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-        
-      }
-      .parent1{
-       border: 2px solid black;
-      text-align: center;
- 
-      } 
-      .parent1:hover{
-        transform: scale(0.8);
-       transform: translate(2,3);
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-      }
-
-      /* HTML: <div class="loader"></div> */
+        /* HTML: <div class="loader"></div> */
 .loader {
   width: 40px;
   height: 20px;
@@ -95,7 +62,10 @@
     </style>
 </head>
 <body>
-  <div class="loader" id="loader"></div>
-    <script src="fake.js"></script>
+    <input type="text" name="city" required pattern="[a-z]+" id="cityName">
+    <button onclick="getdata()">submit</button>
+    <div class="loader" id="loader"></div> 
+    <div id="showData"></div>
+    <script src="w2.js"></script>
 </body>
 </html>

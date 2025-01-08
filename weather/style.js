@@ -9,8 +9,6 @@ const options = {
 	}
 };
 
-
-
 async function _name() {
 
 try {
@@ -40,7 +38,7 @@ para1.innerText=`humidity :${result.main.humidity}`
 
 
 let para2=document.createElement("p")
-para2.innerText=`speed:${result.wind.speed}`
+para2.innerText=`wind-speed:${result.wind.speed}`
 
 
 let para3=document.createElement("p")

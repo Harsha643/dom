@@ -18,6 +18,8 @@ let printData=async()=>{
 }
 printData()
 function get(data){
+    let loader=document.getElementById("loader")
+    loader.style.display="none"
     // console.log(data)
     let div =document.createElement("div")
     div.className="parent"
@@ -31,7 +33,7 @@ function get(data){
             if(a!="rating"){
                 if(a=="image"){
                     let img=document.createElement("img")
-                img.className="container"
+                img.className="imgsrc"
                 img.src=ele.image
                 div1.append(img)
                 }
@@ -57,3 +59,4 @@ function get(data){
       
    document.body.append(div)
 }
+

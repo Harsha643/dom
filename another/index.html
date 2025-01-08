@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="con"></div>
+    <script >
+        async function _name(){
+            let enter=prompt("enter any name")
+            try{
+                let res=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${enter}`)
+                if(!res.ok){
+                    throw new Error("data is not found")
+                }
+                // console.log(res)
+                let data =await res.json()
+
+             console.log(data)
+
+            //  console.log(data.meals)
+
+                data.meals.forEach(element => {
+                    // console.log(element.idMeal)
+                });
+           
+                
+           
+                // red(data)
+        }catch(error){
+
+            console.log("data is failed")
+        }
+        
+        }
+        _name()
+        // let item=document.getElementById("con")
+        // function red(data){
+        //     data.forEach(element => {
+        //     console.log(element)
+            
+        // });
+        // }
+      
+
+
+    </script>
+</body>
+</html>
