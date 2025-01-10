@@ -1,0 +1,26 @@
+{
+    "students":[
+        {
+            "id":"1",
+            "name":"harsha",
+            "image":"https://d2zp5xs5cp8zlg.cloudfront.net/image-77274-800.jpg"
+        },
+        
+            {
+                "id":"2",
+                "name":"vardhan",
+                "image":"https://d2zp5xs5cp8zlg.cloudfront.net/image-77274-800.jpg"
+            },
+            {
+                "id":"3",
+                "name":"sai",
+                "image":"https://d2zp5xs5cp8zlg.cloudfront.net/image-77274-800.jpg"
+            },
+            {
+                "id":"4",
+                "name":"teja",
+                "image":"https://d2zp5xs5cp8zlg.cloudfront.net/image-77274-800.jpg"
+            }
+        
+    ]
+}
