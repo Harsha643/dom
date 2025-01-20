@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  
+    <div id="details"></div>
+    <script>
+        const des = JSON.parse(localStorage.getItem("foodie"));
+        console.log(des.id)
+        // const productDetails = document.getElementById("details");
+        async function foodie(id) {
+            console.log(id);
+            let res=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=chicken`)
+            try{
+                if(!res.ok){
+                    throw new Error(res.statusText)
+                }
+                let data =await res.json()
+                console.log(data)
+            }catch(err){
+                alert("product  display error")
+                console.log(err)
+            }
+            
+        }
+        foodie(des.id)
+        // productDetails.innerHTML = `
+        // <p>${des.id}</p>
+        // `
+        
+        
+        // `
+        //     <img src="${product.image}" alt="${product.name}">
+        //     <h3>${product.name}</h3>
+        //     <p>Price: ₹${product.price}.00</p>
+            
+          
+        //     <button>Proceed to Checkout</button>
+        // `;
+        
+    </script>
+</body>
+</html>

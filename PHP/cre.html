@@ -4,9 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* Form container styling */
+        .container-1 {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: 20px auto;
+            background-color: rgb(230, 255, 255); /* Light blue */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container-1 input,
+        .container-1 button {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid rgb(162, 159, 159); /* Gray border */
+            border-radius: 4px;
+        }
+
+        .container-1 button {
+            background-color: rgb(100, 149, 237); /* Cornflower blue */
+            color: white;
+            cursor: pointer;
+        }
+
+        .container-1 button:hover {
+            background-color: rgb(70, 130, 180); /* Steel blue */
+        }
+
+        /* Student list container styling */
+        #container {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgb(245, 245, 245); /* Light gray */
+            border: 1px solid rgb(211, 211, 211); /* Gray border */
+            border-radius: 8px;
+        }
+
+        /* Individual student card styling */
+        #container div {
+            margin: 10px 0;
+            padding: 15px;
+            background-color: rgb(255, 255, 255); /* White */
+            border: 1px solid rgb(200, 200, 200);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #container div p {
+            margin: 0;
+            color: rgb(0, 0, 0); /* Black */
+            flex: 2;
+            text-align: left;
+        }
+
+        /* Buttons inside student cards
+        #container div .buttons {
+            
+        
+        } */
+
+        #container div button {
+            padding: 5px 10px;
+            border: none;
+            margin: 10px;
+            border-radius: 4px;
+            color:black;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #container div button:nth-child(1) {
+            background-color: rgb(255, 69, 0); /* Orange red for delete */
+        }
+
+        #container div button:nth-child(1):hover {
+            background-color: rgb(220, 20, 60); /* Crimson for hover */
+        }
+
+        #container div button:nth-child(2) {
+            background-color: rgb(34, 139, 34); /* Forest green for edit */
+        }
+
+        #container div button:nth-child(2):hover {
+            background-color: rgb(0, 100, 0); /* Dark green for hover */
+        }
+    </style>
+ 
 </head>
 <body>
-    
+  
+    <div class="container-1">
+        <input type="hidden" id="id">
+        <input type="text" placeholder="name" id="name" required  >
+        <input type="text"  placeholder='image URL' id="image" required>
+        <button onclick="saveData()" >Save the Data</button>
+    </div>
+    <div id="container"></div>
+ 
     <script src="cre.js"></script>
 </body>
 </html>

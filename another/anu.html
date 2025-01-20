@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        @keyframes fall {
+            to{
+                transform:translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function fillInHeart(){
+            setInterval(() =>{
+                const heart = document.createElement("div")
+                heart.innerHTML  = `
+                <img src='https://i.natgeofe.com/k/9acd2bad-fb0e-43a8-935d-ec0aefc60c2f/monarch-butterfly-grass_3x2.jpg'width="100px">
+                `
+                heart.style.cssText =`
+                position: fixed; left: ${Math.random() * 100}%;
+                top: -20px; font-size: ${Math.random() * 20 + 20}px;
+                animation: fall 3s linear;
+                `
+                document.body.append(heart);
+                setTimeout(() => heart.remove(),3000);
+
+            },150)
+        }
+        fillInHeart()
+    </script>
+</body>
+</html>

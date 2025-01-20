@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  
+/* Global styles */
+body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: rgb(240, 240, 240); /* Light gray */
+        }
+
+        /* Title styles */
+        h2 {
+            text-align: center;
+            font-size: 40px;
+            font-family: cursive;
+            color: darkgreen;
+        }
+
+        /* Container styles */
+        .container {
+            display: grid;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Responsive layout */
+        @media (min-width: 320px) {
+            .container {
+                grid-template-columns: 1fr; /* Single column for small screens */
+            }
+        }
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+            }
+        }
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr); /* Three columns for desktops */
+            }
+        }
+
+        /* Card styles */
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgb(220, 220, 220); /* Light border */
+            border-radius: 10px;
+            padding: 15px;
+            background-color: rgb(255, 255, 255); /* White */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        .item:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+            transform: translateY(-5px); /* Slight lift on hover */
+        }
+
+        /* Image styles */
+        img {
+            width: 100%; /* Responsive width */
+            height: 200px; /* Fixed height */
+            object-fit: cover; /* Maintain aspect ratio */
+            border-radius: 8px; /* Rounded corners for images */
+        }
+
+        /* Name styles */
+        p {
+            margin-top: 10px;
+            font-weight: bold; /* Bold font for names */
+            text-align: center;
+            color: rgb(34, 34, 34); /* Dark text */
+        }
+
+        /* Error message styles */
+        .error-message {
+            text-align: center;
+            font-size: 18px;
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>My fav</h2>
+    <div class="container"></div>
+    <script src="UI.js"></script>
+</body>
+</html>

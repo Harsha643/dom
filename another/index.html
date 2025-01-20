@@ -5,21 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container{
-            width: 500px;
-            height: 500px;
-            border: 2px solid azure;
-            background-color: azure;
-        }
+       #maincontainer{
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+       
+       }
+       .container-1{
+        background-color: aqua;
+       }
     </style>
 </head>
 <body>
-    <div class="container"></div>
-<button class="btn1">btn1</button>
-<button class="btn2">btn2</button>
-<button class="btn3">btn3</button>
-<button class="btn4">btn4</button>
-<button class="btn5">btn5</button>
+ <div id="container-1"></div>
+ <div id="maincontainer"></div>
 <script src="index.js"></script>
 </body>
 </html>

@@ -16,6 +16,10 @@ function display(result){
     item.innerHTML=`
     <p>city :${result.name}</p>
     <p>temp :${result.main.temp}</p>
+	<p>humidity :${result.main.humidity}</p>
+	<p>wind-speed:${result.wind.speed}</p>
+	<p>pressure :${result.main.pressure}</p>
+
     `
 }
 

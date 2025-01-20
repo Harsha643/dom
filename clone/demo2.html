@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <form id="form">
+    <input type="email" id="email">
+    <input type="password" id="pwd">
+    <button type="submit">submit</button>
+
+  </form>
+    
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBxOOzPr0nlGXmb_i6HXNzAWMG7qcqCr8c",
+      authDomain: "newproject-e2377.firebaseapp.com",
+      projectId: "newproject-e2377",
+      storageBucket: "newproject-e2377.firebasestorage.app",
+      messagingSenderId: "359921221826",
+      appId: "1:359921221826:web:3ef502e2c0e28bb5b7fb5b"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+let form=document.getElementById("form")
+
+
+form.addEventListener("submit",(event)=>{
+  event.preventDefault()
+  const auth = getAuth();
+  let email=document.getElementById("email").value.trim()
+  let password=document.getElementById("pwd").value.trim()
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    // ...
+    alert("login is successfull")
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+    alert("login failed")
+  });
+
+})
+
+  </script>
+</body>
+</html>

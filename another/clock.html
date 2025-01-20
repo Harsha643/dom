@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+     <style>
+        /* General styling for the digital clock */
+        body {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .digital-clock {
+            background: linear-gradient(90deg, #1a1a1a, #333, #1a1a1a); /* Subtle gradient */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            width: 350px;
+            /* border-radius: 50%; */
+        }
+
+        .week {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .week div {
+            color: #666;
+            font-weight: bold;
+        }
+
+        .week .active {
+            color: #00ffcc; /* Highlight for active day */
+        }
+
+        .time {
+            font-family: "Courier New", monospace;
+            font-size: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .hour, .min, .dot {
+            display: inline-block;
+        }
+
+        .dot {
+            animation: blink 1s steps(1, end) infinite; /* Blinking effect for the colon */
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+            50.1%, 100% {
+                opacity: 0;
+            }
+        }
+
+        .set {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .set .date {
+            font-size: 1.5rem;
+            color: #00ffcc;
+        }
+
+        .set .year {
+            font-size: 1.2rem;
+            color: #ffcc00;
+            margin-top: 0.5rem;
+        }
+
+        .set .day {
+            font-size: 1.2rem;
+            color: #ff6666;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="digital-clock">
+        <div class="week">
+            <div class="active">SUN</div>
+            <div>MON</div>
+            <div>TUE</div>
+            <div>WED</div>
+            <div>THU</div>
+            <div>FRI</div>
+            <div>SAT</div>
+        </div>
+        <div class="time">
+            <div class="hour">12</div>
+            <div class="dot">:</div>
+            <div class="min">05</div>
+        </div>
+        <div class="set">
+           <div class="date"></div>
+           <div class="year"></div>
+           <div class="day"></div>
+        </div>
+    </div>
+    <script>
+        const $ = (selector) => document.querySelector(selector);
+        const hour = $('.hour');
+        const dot = $('.dot');
+        const min = $('.min');
+        const week = $('.week');
+        const dateDisplay = $('.date'); // Date element
+
+        function updateClock() {
+            const now = new Date();
+
+            // Update time
+            hour.textContent = String(now.getHours()).padStart(2, '0');
+            min.textContent = String(now.getMinutes()).padStart(2, '0');
+
+            // Update date
+            const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
+            dateDisplay.textContent = now.toLocaleDateString('en-US', options);
+
+            // Highlight the current day
+            Array.from(week.children).forEach((ele, index) => {
+                ele.classList.toggle('active', index === now.getDay());
+            });
+        }
+
+        // Initial call and interval update
+        updateClock();
+        setTimeout(updateClock, 1000);
+    </script>
+</body>
+</html>
