@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    async function as() {
+        
+ 
+        const url = 'https://irctc1.p.rapidapi.com/api/v1/getTrainScheduleV2?trainNo=12936';
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': 'ae42d6fe5bmshc4c1462b3b6aa15p1b7dffjsn266ee5e64111',
+		'x-rapidapi-host': 'irctc1.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+}
+as()
+    </script>
+</body>
+</html>
